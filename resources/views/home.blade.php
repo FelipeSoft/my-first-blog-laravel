@@ -6,22 +6,17 @@
         <button class="secondary-button load">Cadastrar-se</button>
     </x-slot>
 
-    <section id="home">
-        <div class="largeNew">
-            <div class="l-content-new">
-                <div class="date">{{date("d/m/Y H:i", strtotime($data[0]['updated_at']))}}</div>
-                <div class="title"><h1>{{$data[0]['title']}}</h1></div>
-                <div class="author"><i class="fa fa-user"></i>{{$data[0]->user['name']}}</div>
+    <x-slot name="homeNew">
+        @foreach ($data as $d)
+            <div class="homeNew">
+                <div class="l-content-new">
+                    <div class="date">{{date("d/m/Y H:i", strtotime($d['updated_at']))}}</div>
+                    <div class="title"><a style=" color: var(--white); " href="http://localhost/blog-laravel/public/new/{{$d['id']}}"><h1>{{$d['title']}}</h1></a></div>
+                    <div class="author"><i class="fa fa-user"></i>{{$d['user_name']}}</div>
+                </div>
             </div>
-        </div>
-        <div class="smallNew">
-            <div class="l-content-new">
-                <div class="date">{{date("d/m/Y H:i", strtotime($data[1]['updated_at']))}}</div>
-                <div class="title"><h2>{{$data[1]['title']}}</h2></div>
-                <div class="author"><i class="fa fa-user"></i>{{$data[1]->user['name']}}</div>
-            </div>
-        </div>
-    </section>
+        @endforeach
+    </x-slot>
 
     <section id="populars">
         <div class="section-title">
@@ -42,39 +37,11 @@
         </div>
     </section>
 
-    <x-slot name="large">
-        <div class="largeNew">
-            <div class="l-content-new">
-                <div class="date">{{date("d/m/Y H:i", strtotime($data[0]['updated_at']))}}</div>
-                <div class="title"><h1>{{$data[0]['title']}}</h1></div>
-                <div class="author"><i class="fa fa-user"></i>{{$data[0]->user['name']}}</div>
-            </div>
-        </div>
-    </x-slot>
-    <x-slot name="small">
-        <div class="smallNew">
-            <div class="l-content-new">
-                <div class="date">{{date("d/m/Y H:i", strtotime($data[1]['updated_at']))}}</div>
-                <div class="title"><h2>{{$data[1]['title']}}</h2></div>
-                <div class="author"><i class="fa fa-user"></i>{{$data[1]->user['name']}}</div>
-            </div>
-        </div>
-    </x-slot>
-    <x-slot name="small">
-        <div class="smallNew">
-            <div class="l-content-new">
-                <div class="date">{{date("d/m/Y H:i", strtotime($data[2]['updated_at']))}}</div>
-                <div class="title"><h2>{{$data[2]['title']}}</h2></div>
-                <div class="author"><i class="fa fa-user"></i>{{$data[2]->user['name']}}</div>
-            </div>
-        </div>
-    </x-slot>
-
     <x-slot name='common'>
         <div class="common-new">
             <div class="cn-image-area"><img src="" alt=""></div>
             <div class="cn-content-area">
-                <div class="title"><h2>--</h2></div>
+                <div class="title"><a href=""><h2>--</h2></a></div>
                 <div class="subtitle"><p>--</p></div>
                 <div class="author"><i class="fa fa-user"></i>--</div>
                 <div class="date">

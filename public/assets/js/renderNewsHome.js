@@ -34,6 +34,7 @@ async function renderNews(result){
         let formatedDate = `${fixZero(resultDate.getDay())}/${fixZero(resultDate.getMonth() + 1)}/${resultDate.getFullYear()} ${fixZero(resultDate.getHours())}:${fixZero(resultDate.getMinutes())}`;
 
         commonNewTemplate.setAttribute('data-cn', index);
+        commonNewTemplate.querySelector('div.title a').setAttribute('href', `http://localhost/blog-laravel/public/new/${obj.id}`);
         commonNewTemplate.querySelector('div.title h2').innerHTML = obj.title;
         commonNewTemplate.querySelector('div.subtitle p').innerHTML = obj.subtitle;
         commonNewTemplate.querySelector('div.author').innerHTML = `<i class="fa fa-user"></i>${obj.user.name}`;

@@ -18,14 +18,14 @@
             @endcomponent
         @else
             @foreach ($topic as $t)
-            <div class="common-new">
-                <div class="cn-image-area"><img src="" alt=""></div>
-                <div class="cn-content-area">
-                    <div class="title"><h2>{{$t['title']}}</h2></div>
-                    <div class="subtitle"><p>{{$t['subtitle']}}</p></div>
-                    <div class="author"><i class="fa fa-user"></i>{{$t->user['name']}}</div>
+                <div class="common-new">
+                    <div class="cn-image-area"><img src="" alt=""></div>
+                    <div class="cn-content-area">
+                        <div class="title"><a href="http://localhost/blog-laravel/public/new/{{$t['id']}}"><h2>{{$t['title']}}</h2></a></div>
+                        <div class="subtitle"><p>{{$t['subtitle']}}</p></div>
+                        <div class="author"><i class="fa fa-user"></i>{{$t->user['name']}}</div>
+                    </div>
                 </div>
-            </div>
             @endforeach
         @endif
     </div>

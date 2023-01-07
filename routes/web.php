@@ -15,6 +15,7 @@ Route::get('/publicar', function () {
 });
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/new/{id}', [HomeController::class, 'new']);
 Route::post('/', [HomeController::class, 'search_action']);
 
 Route::get('/login', [AuthController::class, 'login']);

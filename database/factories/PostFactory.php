@@ -10,9 +10,9 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->text('30'),
-            'subtitle' => $this->faker->text('60'),
-            'body' => $this->faker->text(),
+            'title' => $this->faker->text(30),
+            'subtitle' => $this->faker->text(300),
+            'body' => $this->faker->text(2000),
             'user_id' => User::all()->random(),
         ];
     }

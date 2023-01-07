@@ -11,8 +11,8 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable(false);
-            $table->string('subtitle')->nullable(false);
+            $table->text('title')->nullable(false);
+            $table->text('subtitle')->nullable(false);
             $table->text('body')->nullable(false);
             $table->foreignIdFor(User::class)->references('id')->on('users')->onDelete('CASCADE');
             $table->timestamps();

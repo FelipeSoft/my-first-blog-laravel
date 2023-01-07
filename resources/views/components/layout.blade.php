@@ -2,9 +2,7 @@
 
 @endcomponent
     <section id="home">
-        {{$large ?? null}}
-        {{$small ?? null}}
-        {{$small ?? null}}
+        {{$homeNew ?? null}}
     </section>
 
     <section id="populars">

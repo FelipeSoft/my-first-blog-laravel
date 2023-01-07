@@ -30,13 +30,20 @@ footer div ul li a:hover{
 }
 
 section,
-div.container-footer{
+div.container-footer,
+div.container-top-area{
     max-width: 1300px;
     margin: auto;
 }
 nav{
     display: flex;
     align-items: center;
+}
+
+p.paragraph{
+    text-align: justify;
+    line-height: 32px;
+    margin-top: 18px;
 }
 
 /* navigation */
@@ -138,8 +145,7 @@ div.date{
     margin-top: 10px;
     color: var(--white);
 }
-div.largeNew,
-div.smallNew{
+div.homeNew{
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
@@ -150,26 +156,34 @@ div.smallNew{
     background-size: cover;
     background-position: center; */
 }
-div.largeNew img,
-div.smallNew img{
+div.homeNew img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-div.largeNew{
+div.homeNew{
     grid-column: 1 / 2;
     grid-row: 1 / 3;
 }
 
-div.smallNew:nth-child(1){
+div.homeNew:nth-child(1){
     grid-column: 2 / 3;
     grid-row: 1 / 2;
 }
 
-div.smallNew:nth-child(2){
+div.homeNew:nth-child(2){
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 }
+
+section#home > div:nth-child(1) > div > div.title > a > h1{
+    font-size: 1.5em;
+}
+
+section#home > div:nth-child(2) > div > div.title > a > h1{
+    font-size: 1.5em;
+}
+
 
 div.author i{
     margin-right: 10px;
@@ -217,7 +231,7 @@ div.section-title div.hr{
 }
 div.common-new{
     display: flex;
-    height: 200px;
+    height: 100%;
     width: 100%;
 }
 div.common-new:nth-child(1){
@@ -235,6 +249,12 @@ div.cn-content-area{
 div.subtitle{
     margin: 10px 0px;
 }
+div.title a{
+    color: var(--black);
+}
+div.title a:hover{
+    text-decoration: underline;
+}
 button.load-more{
     width: 230px;
 }
@@ -244,6 +264,52 @@ div.container-sr{
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
     margin-bottom: 36px;
+}
+
+/* current new */
+
+
+
+section#currentNew h1,
+section#currentNew h3{
+    margin-top: 36px;
+}
+
+div.container-top-area h1{
+    font-size: 3em;
+    font-weight: 700;
+    margin: 10px 0px 20px 0px;
+}
+div.container-top-area p{
+    font-size: 1em;
+    font-weight: 400;
+}
+
+div.top-area{
+    background-color: var(--shadow-color);
+    height: 360px;
+    color: var(--white);
+}
+div.container-top-area,
+section#currentNew{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    height: inherit;
+    padding: 0px 80px;
+}
+
+div.top-area div.section-title{
+    margin: 0;
+}
+div.authorArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 36px 0px;
+    width: 100%;
 }
 /* footer */
 footer{
