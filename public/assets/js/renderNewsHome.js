@@ -5,6 +5,8 @@ document.querySelector('div.container-populars main button.primary-button.load-m
     count += 4;
     let response = await fetch('http://localhost/blog-laravel/public/api/');
     let result = await response.json();
+    result.reverse();
+
     if(response.status === 200 && result !== []){
         if(count < result.length){
             renderNews(result.slice(countRenderedNews(), count));
@@ -18,6 +20,8 @@ document.querySelector('div.container-populars main button.primary-button.load-m
 window.onload = async function(){
     let response = await fetch('http://localhost/blog-laravel/public/api/');
     let result = await response.json();
+    result.reverse();
+
     if(response.status === 200 && result !== []){
         renderNews(result.slice(0, 4));
     }
@@ -31,7 +35,7 @@ async function renderNews(result){
     result.map((obj, index) => {
         let commonNewTemplate = document.querySelector('div.common-new').cloneNode(true);
         let resultDate = new Date(obj.updated_at);
-        let formatedDate = `${fixZero(resultDate.getDay())}/${fixZero(resultDate.getMonth() + 1)}/${resultDate.getFullYear()} ${fixZero(resultDate.getHours())}:${fixZero(resultDate.getMinutes())}`;
+        let formatedDate = `${fixZero(resultDate.getDate())}/${fixZero(resultDate.getMonth() + 1)}/${resultDate.getFullYear()} ${fixZero(resultDate.getHours())}:${fixZero(resultDate.getMinutes())}`;
 
         commonNewTemplate.setAttribute('data-cn', index);
         commonNewTemplate.querySelector('div.title a').setAttribute('href', `http://localhost/blog-laravel/public/new/${obj.id}`);

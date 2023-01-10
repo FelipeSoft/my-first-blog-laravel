@@ -1,15 +1,19 @@
 @component('components.header')
-
+    @slot('page')
+        Blog.io | Artigo
+    @endslot
 @endcomponent
 
 <div class="top-area">
     <div class="container-top-area">
         <div class="section-title">
             <div>
-                <i class="fa fa-file"></i>
-                <h4>Artigo</h4>
+                <div class="text">
+                    <i class="fa fa-file"></i>
+                    <h4>Artigo</h4>
+                </div>
+                <div class="hr"></div>
             </div>
-            <div class="hr"></div>
         </div>
         <h1>{{$new['title']}}</h1>
         <p>{{$new['subtitle']}}</p>

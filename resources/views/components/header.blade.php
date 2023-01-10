@@ -8,6 +8,7 @@
 <title>{{$page ?? 'Blog.io'}}</title>
 <link rel="stylesheet" href="http://localhost/blog-laravel/public/assets/css/style.css">
 <script src="https://use.fontawesome.com/a443ad607e.js"></script>
+<script src="http://localhost/blog-laravel/public/assets/js/main.js" defer></script>
 </head>
 <body>
 <header>
@@ -15,9 +16,9 @@
         <nav>
             <ul>
                 <li><a href="http://localhost/blog-laravel/public/">Home</a></li>
-                <li><a href="http://localhost/blog-laravel/public/sobre">Sobre</a></li>
-                <li><a href="http://localhost/blog-laravel/public/tecnologias">Tecnologias</a></li>
-                <li><a href="http://localhost/blog-laravel/public/publicar">Publicar</a></li>
+                <li><a href="http://localhost/blog-laravel/public/about">Sobre</a></li>
+                <li><a href="http://localhost/blog-laravel/public/technologies">Tecnologias</a></li>
+                <li><a href="http://localhost/blog-laravel/public/publish">Publicar</a></li>
             </ul>
         </nav>
         <h1>Blog<span>.io</span></h1>
@@ -41,6 +42,7 @@
                     </a>
                 </li>
             </ul>
+            <i id="menu-mobile-icon" class="fa fa-bars"></i>
         </nav>
     </div>
 </header>

@@ -11,10 +11,11 @@ class HomeController extends Controller
         $data = [];
         $posts = Post::all();
 
-        if(date("Hi") > '0000'){
-            for($i = 0; $i < 3; $i++){
-                $random = rand(1, $posts->count());
-                $info = $posts->find($random);
+        for($i = 0; $i < 3; $i++){
+            $random = rand(1, $posts->count());
+            $info = $posts->find($random);
+
+            if($info !== null){
                 $newInfo = [
                     'id' => $info['id'],
                     'title' => $info['title'],
@@ -23,8 +24,9 @@ class HomeController extends Controller
                     'updated_at' => $info['updated_at'],
                     'user_name' => $info->user->name,
                 ];
-                $data[] = $newInfo;
             }
+
+            $data[] = $newInfo;
         }
         return view('home', ['data' => $data]);
     }
@@ -34,19 +36,9 @@ class HomeController extends Controller
         return view('current-new', ['new' => $new]);
     }
 
-    public function search_action(Request $r){
-        $topic = Post::where('title', 'LIKE', "%{$r->input('topic')}%")
-                ->orWhere('subtitle', 'LIKE', "%{$r->input('topic')}%")
-                ->get();
-
-        return view('result', [
-            'topic' => $topic,
-            'typed' => $r->input('topic')
-        ]);
-    }
-
     public function posts(Request $r){
         $posts = Post::all();
+        
         foreach($posts as $p){
             $p['user_id'] = $p->user;
         }

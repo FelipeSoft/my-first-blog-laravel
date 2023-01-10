@@ -2,6 +2,8 @@
 
 @endcomponent
 
+
+
 @component('components.footer')
 
 @endcomponent
