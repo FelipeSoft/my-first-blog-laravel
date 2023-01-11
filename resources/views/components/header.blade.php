@@ -30,18 +30,7 @@
                     <button style="border: 0; background-color: var(--shadow-color); "><i class="fa fa-search"></i></button>
                 </form>
             </div>
-            <ul>
-                <li>
-                    <a href="">
-                        <button class="primary-button">Entrar</button>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <button class="secondary-button">Cadastrar-se</button>
-                    </a>
-                </li>
-            </ul>
+            {{$userActions ?? null}}
             <i id="menu-mobile-icon" class="fa fa-bars"></i>
         </nav>
     </div>

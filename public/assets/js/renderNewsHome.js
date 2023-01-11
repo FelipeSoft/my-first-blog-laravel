@@ -1,5 +1,5 @@
 var count = 4;
-const fixZero = (time) => time < 10 ? `0${time}` : time;
+const fixZero = (time) => time < 10 ? `0${time}` : time;    
 
 document.querySelector('div.container-populars main button.primary-button.load-more').addEventListener('click', async function(){
     count += 4;

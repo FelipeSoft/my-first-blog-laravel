@@ -202,12 +202,13 @@ div.author i{
 /* populars */
 div.container-populars{
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr 1.7fr;
     gap: 18px;
 }
 div.container-populars aside{
-    background-color: var(--red);
+    background-color: var(--white);
     width: 100%;
+    gap: 18px;
 }
 section#populars
 {
@@ -280,9 +281,6 @@ div.container-sr{
 }
 
 /* current new */
-
-
-
 section#currentNew h1,
 section#currentNew h3{
     margin-top: 36px;
@@ -323,6 +321,46 @@ div.authorArea{
     justify-content: center;
     margin: 36px 0px;
     width: 100%;
+}
+/* aside widgets */
+div.stay-informed,
+div.weather{
+    width: 100%;
+    height: max-content;
+    background-color: #ffffff;
+    padding: 36px;
+    margin-bottom: 18px;
+}
+div.stay-informed p{
+    text-align: justify;
+    margin: 18px 0px 10px;
+}
+div.stay-informed button{
+    margin-top: 26px;
+}
+/* div.weather-info-area{
+    width: 100%;
+} */
+div.container-weather{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+div.weather-appearence{
+    text-transform: capitalize;
+    font-weight: 700;
+}
+div.temperature{
+    display: flex;
+}
+div.temperature p{
+    font-size: 36px;
+}
+div.weather-other-info-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 /* footer */
 footer{
