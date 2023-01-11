@@ -11,7 +11,7 @@ const sucess = async (position) => {
     c('div.weather-icon-area img').src = `http://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`;
     c('div.weather-appearence').innerHTML = result.weather[0].description;
     c('div.city-name').innerHTML = result.name;
-    c('div.weather-date').innerHTML = `${arrayWeekDays[now.getDay()]}, ${fixZero(now.getDate())} de ${fixZero(arrayMonths[now.getMonth()])} ${fixZero(now.getHours())}h${fixZero(now.getMinutes())}`;
+    c('div.weather-date').innerHTML = `${arrayWeekDays[now.getDay()]}, ${fixZero(now.getDate())} de ${fixZero(arrayMonths[now.getMonth()])} ${fixZero(now.getHours())}:${fixZero(now.getMinutes())}`;
     c('div.temperature p').innerHTML = `${(result.main.temp).toFixed(0)}`;
     c('div.wind').innerHTML = `${result.wind.speed} km/h`;
 }

@@ -1,9 +1,22 @@
-@component('components.header')
-    @slot('page')
-        Blog.io | Artigo
-    @endslot
-@endcomponent
+<x-header>
+    <x-slot name="page">Blog.io | Artigo</x-slot>
+    <x-slot name="userActions">
+        <ul>
+            <li>
+                <a href="">
+                    <button class="primary-button">Entrar</button>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <button class="secondary-button">Cadastrar-se</button>
+                </a>
+            </li>
+        </ul>
+    </x-slot>
+</x-header>
 
+@if($new !== null)
 <div class="top-area">
     <div class="container-top-area">
         <div class="section-title">
@@ -33,6 +46,11 @@
         <p>Email: <em>{{$new->user->email}}</em></p>
     </div>
 </section>
+@else
+    <script>
+        window.location = "http://localhost/blog-laravel/public/";
+    </script>
+@endif
 
 @component('components.footer')
 

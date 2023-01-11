@@ -16,8 +16,8 @@
         <nav>
             <ul>
                 <li><a href="http://localhost/blog-laravel/public/">Home</a></li>
-                <li><a href="http://localhost/blog-laravel/public/about">Sobre</a></li>
                 <li><a href="http://localhost/blog-laravel/public/technologies">Tecnologias</a></li>
+                <li><a href="http://localhost/blog-laravel/public/about">Sobre</a></li>
                 <li><a href="http://localhost/blog-laravel/public/publish">Publicar</a></li>
             </ul>
         </nav>

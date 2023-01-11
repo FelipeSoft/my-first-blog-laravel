@@ -24,9 +24,8 @@ class HomeController extends Controller
                     'updated_at' => $info['updated_at'],
                     'user_name' => $info->user->name,
                 ];
+                $data[] = $newInfo;
             }
-
-            $data[] = $newInfo;
         }
         return view('home', ['data' => $data]);
     }
@@ -38,7 +37,7 @@ class HomeController extends Controller
 
     public function posts(Request $r){
         $posts = Post::all();
-        
+
         foreach($posts as $p){
             $p['user_id'] = $p->user;
         }

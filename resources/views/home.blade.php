@@ -1,8 +1,6 @@
-@component('components.header')
-    @slot('page')
-        Blog.io | Home
-    @endslot
-    @slot('userActions')
+<x-header>
+    <x-slot name="page">Blog.io | Home</x-slot>
+    <x-slot name="userActions">
         <ul>
             <li>
                 <a href="">
@@ -15,18 +13,18 @@
                 </a>
             </li>
         </ul>
-    @endslot
-@endcomponent
+    </x-slot>
+</x-header>
     <section id="home">
         @foreach ($data as $d)
-        <div class="homeNew">
-            <div class="l-content-new">
-                <div class="date">{{date("d/m/Y H:i", strtotime($d['updated_at']))}}</div>
-                <div class="title"><a style=" color: var(--white); " href="http://localhost/blog-laravel/public/new/{{$d['id']}}"><h1>{{$d['title']}}</h1></a></div>
-                <div class="author"><i class="fa fa-user"></i>{{$d['user_name']}}</div>
+            <div class="homeNew">
+                <div class="l-content-new">
+                    <div class="date">{{date("d/m/Y H:i", strtotime($d['updated_at']))}}</div>
+                    <div class="title"><a style=" color: var(--white); " href="http://localhost/blog-laravel/public/new/{{$d['id']}}"><h1>{{$d['title']}}</h1></a></div>
+                    <div class="author"><i class="fa fa-user"></i>{{$d['user_name']}}</div>
+                </div>
             </div>
-        </div>
-    @endforeach
+        @endforeach
     </section>
 
     <section id="populars">
@@ -96,8 +94,8 @@
             </div>
         @endforeach
     </x-slot>
-@component('components.footer')
-    @slot('script')
+<x-footer>
+    <x-slot name="script">
         http://localhost/blog-laravel/public/assets/js/renderNewsHome.js
-    @endslot
-@endcomponent
+    </x-slot>
+</x-footer>
