@@ -30,7 +30,18 @@
                     <button style="border: 0; background-color: var(--shadow-color); "><i class="fa fa-search"></i></button>
                 </form>
             </div>
-            {{$userActions ?? null}}
+        <ul>
+            <li>
+                <a href="http://localhost/blog-laravel/public/login">
+                    <button class="primary-button">Entrar</button>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost/blog-laravel/public/register">
+                    <button class="secondary-button">Cadastrar-se</button>
+                </a>
+            </li>
+        </ul>
             <i id="menu-mobile-icon" class="fa fa-bars"></i>
         </nav>
     </div>

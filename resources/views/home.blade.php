@@ -1,19 +1,5 @@
 <x-header>
     <x-slot name="page">Blog.io | Home</x-slot>
-    <x-slot name="userActions">
-        <ul>
-            <li>
-                <a href="">
-                    <button class="primary-button">Entrar</button>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <button class="secondary-button">Cadastrar-se</button>
-                </a>
-            </li>
-        </ul>
-    </x-slot>
 </x-header>
     <section id="home">
         @foreach ($data as $d)

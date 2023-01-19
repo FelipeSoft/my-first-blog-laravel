@@ -21,5 +21,9 @@ Route::get('/new/{id}', [HomeController::class, 'new']);
 Route::post('/', [PostController::class, 'search_action']);
 Route::post('/publish', [PostController::class, 'publish_action']);
 
-Route::get('/login', [AuthController::class, 'login']);
+Route::get('/login', fn() => view('login'));
+Route::get('/register', fn() => view('register'));
+
+Route::post('/register', [AuthController::class, 'register_action']);
+Route::post('/login', [AuthController::class, 'login_action']);
 
