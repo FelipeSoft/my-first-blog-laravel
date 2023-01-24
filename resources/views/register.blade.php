@@ -26,6 +26,6 @@
             <button class="primary-button">REGISTRAR</button>
         </form>
     </div>
-    <script src="http://localhost/blog-laravel/public/assets/js/loginFormValidation.js"></script>
+    <script src="http://localhost/blog-laravel/public/assets/js/registerFormValidation.js"></script>
 </body>
 </html>

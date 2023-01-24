@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class AuthController extends Controller
@@ -22,6 +23,15 @@ class AuthController extends Controller
     }
 
     public function login_action(Request $r){
-        
+        $validator = $r->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if(Auth::attempt($validator)){
+            return redirect('http://localhost/blog-laravel/public/');
+        } else {
+            return view('login', ['error' => 'Email e/ou senha incorretos.']);
+        }
     }
 }

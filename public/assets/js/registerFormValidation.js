@@ -4,6 +4,7 @@ let validator = {
 
         let send = true;
         let inputs = form.querySelectorAll('input');
+        let passwordConfirm = form.querySelectorAll('input[type="password"]');
 
         validator.clearErrors();
 
@@ -16,6 +17,11 @@ let validator = {
                 validator.showError(input, check);
             }
 
+        }
+
+        if(passwordConfirm[0].value !== passwordConfirm[1].value){
+            send = false;
+            document.querySelector('div.passwordConfirmErrorArea').innerHTML = 'As senhas não coincidem!';
         }
 
         if(send) {
@@ -76,5 +82,5 @@ let validator = {
     },
 };
 
-let form = document.querySelector('form#login-form');
+let form = document.querySelector('form#register-form');
 form.addEventListener('submit', validator.handleSubmit); 
