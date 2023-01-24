@@ -24,6 +24,6 @@ Route::post('/publish', [PostController::class, 'publish_action']);
 Route::get('/login', fn() => view('login'));
 Route::get('/register', fn() => view('register'));
 
-Route::post('/register', [AuthController::class, 'register_action']);
 Route::post('/login', [AuthController::class, 'login_action']);
+Route::post('/register', [AuthController::class, 'register_action']);
 
