@@ -4,10 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdministrationController;
 
-Route::get('/management', function () {
-    return view('management');
-});
 Route::get('/administration', function () {
     return view('administration');
 });
@@ -26,4 +24,6 @@ Route::get('/register', fn() => view('register'));
 
 Route::post('/login', [AuthController::class, 'login_action']);
 Route::post('/register', [AuthController::class, 'register_action']);
+
+Route::get('/management', [AdministrationController::class, 'load']);
 

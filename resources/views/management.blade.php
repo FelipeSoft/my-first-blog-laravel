@@ -15,10 +15,24 @@
                 <td>ID</td>
                 <td>Título</td>
                 <td>Subtítulo</td>
-                <td>Corpo</td>
                 <td>Autor</td>
+                <td>Execuções</td>
             </tr>
         </thead>
+        <tbody>
+            @foreach ($posts as $p)
+                <tr>
+                    <td style="text-align:center;">{{$p['id']}}</td>
+                    <td>{{$p['title']}}</td>
+                    <td>{{$p['subtitle']}}</td>
+                    <td>{{$p['author']}}</td>
+                    <td>
+                        <a href=""><i class="fa fa-pencil"></i></a>
+                        <a href=""><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
     </table>
 </section>
 

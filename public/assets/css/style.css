@@ -408,6 +408,23 @@ div.passwordConfirmErrorArea{
 
 section#management table{
     width: 100%;
+    border-collapse: collapse;
+}
+section#management table thead tr{
+    text-align: center;
+    background-color: var(--red);
+    color: var(--white);
+}
+section#management table thead tr td{
+    padding: 10px;
+    border: 1px solid var(--shadow-color);
+}
+section#management table tbody tr td{
+    width: max-content;
+    background-color: #fff;
+    border: 1px solid var(--shadow-color);
+    padding: 10px;
+    height: 100%;
 }
 /* footer */
 footer{
