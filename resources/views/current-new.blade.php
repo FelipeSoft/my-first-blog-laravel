@@ -1,19 +1,8 @@
 <x-header>
     <x-slot name="page">Blog.io | Artigo</x-slot>
-    <x-slot name="userActions">
-        <ul>
-            <li>
-                <a href="">
-                    <button class="primary-button">Entrar</button>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <button class="secondary-button">Cadastrar-se</button>
-                </a>
-            </li>
-        </ul>
-    </x-slot>
+    <x-slot name="search">
+        <x-search></x-search>    
+    </x-slot>    
 </x-header>
 
 @if($new !== null)
@@ -51,7 +40,4 @@
         window.location = "http://localhost/blog-laravel/public/";
     </script>
 @endif
-
-@component('components.footer')
-
-@endcomponent
+<x-footer></x-footer>

@@ -16,29 +16,21 @@
         <nav>
             <ul>
                 <li><a href="http://localhost/blog-laravel/public/">Home</a></li>
-                <li><a href="http://localhost/blog-laravel/public/technologies">Tecnologias</a></li>
-                <li><a href="http://localhost/blog-laravel/public/about">Sobre</a></li>
-                <li><a href="http://localhost/blog-laravel/public/publish">Publicar</a></li>
+                <li><a href="http://localhost/blog-laravel/public/publish">Nova Publicação</a></li>
             </ul>
         </nav>
         <h1>Blog<span>.io</span></h1>
         <nav>
-            <div class="search">
-                <form action="http://localhost/blog-laravel/public/" method="POST">
-                    @csrf
-                    <input type="text" name="topic">
-                    <button style="border: 0; background-color: var(--shadow-color); "><i class="fa fa-search"></i></button>
-                </form>
-            </div>
+            {{$search ?? null}}
         <ul>
             <li>
-                <a href="http://localhost/blog-laravel/public/login">
-                    <button class="primary-button">Entrar</button>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost/blog-laravel/public/register">
-                    <button class="secondary-button">Cadastrar-se</button>
+                <a href="http://localhost/blog-laravel/public/management">
+                    <x-button>
+                        <x-slot name="class">
+                            primary-button
+                        </x-slot>
+                        <x-slot name="title">Área do Administrador</x-slot>
+                    </x-button>
                 </a>
             </li>
         </ul>

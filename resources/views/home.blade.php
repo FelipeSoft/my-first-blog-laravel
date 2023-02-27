@@ -1,5 +1,8 @@
 <x-header>
     <x-slot name="page">Blog.io | Home</x-slot>
+    <x-slot name="search">
+        <x-search></x-search>    
+    </x-slot>    
 </x-header>
     <section id="home">
         @foreach ($data as $d)
@@ -14,15 +17,12 @@
     </section>
 
     <section id="populars">
-        <div class="section-title">
-            <div>
-                <div class="text">
-                    <i class="fa fa-fire"></i>
-                    <h4>Populares</h4>
-                </div>
-                <div class="hr"></div>
-            </div>
-        </div>
+        <x-section-title>
+            <x-slot name="title">Populares</x-slot>
+            <x-slot name="icon">
+                <i class="fa fa-fire"></i>
+            </x-slot>
+        </x-section-title>
         <div class="container-populars">
             <main>
                 <div class="cn-container">
@@ -38,15 +38,19 @@
                         </div>
                     </div>
                 </div>
-                <button class="primary-button load-more">Carregar mais</button>
+                <x-button>
+                    <x-slot name="class">primary-button load-more</x-slot>
+                    <x-slot name="title">Carregar mais</x-slot>
+                </x-button>
             </main>
             <aside>
                 <div class="stay-informed">
                     <h3>Esteja informado</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <button class="secondary-button" style="background-color: #fff;">
-                        Saiba mais
-                    </button>
+                    <x-button>
+                        <x-slot name="class">secondary-button</x-slot>
+                        <x-slot name="title">Saiba mais</x-slot>
+                    </x-button>
                 </div>
                 <div class="weather">
                     <h3>Clima</h3>

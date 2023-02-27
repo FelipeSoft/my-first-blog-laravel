@@ -1,6 +1,8 @@
-@component('components.header')
-
-@endcomponent
+<x-header>
+    <x-slot name="search">
+        <x-search></x-search>    
+    </x-slot>
+</x-header>
 <section id="searchResult">
     <div class="section-title">
         <div>
@@ -10,11 +12,9 @@
             </div>
             <div class="hr"></div>
         </div>
-        @component('components.result-message')
-            @slot('typed')
-                {{$typed}}
-            @endslot
-        @endcomponent
+        <x-result-message>
+            <x-slot name="typed">{{$typed}}</x-slot>
+        </x-result-message>
     </div>
     <div class="container-sr">
         @if($topic->count() !== 0)
@@ -30,17 +30,17 @@
                 </div>
             @endforeach
         @else
-            @component('components.warning')
-                @slot('typed')
+            <x-warning>
+                <x-slot name="typed">
                     {{$typed}}
-                @endslot
-            @endcomponent
+                </x-slot>
+            </x-warning>
         @endif
     </div>
 </section>
 
-@component('components.footer')
-    @slot('script')
+<x-footer>
+    <x-slot name="script">
         http://localhost/blog-laravel/public/assets/js/searchAdjustment.js
-    @endslot
-@endcomponent
+    </x-slot>
+</x-footer>

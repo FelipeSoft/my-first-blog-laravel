@@ -5,11 +5,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 
-Route::get('/about', function () {
-    return view('about');
+Route::get('/management', function () {
+    return view('management');
 });
-Route::get('/technologies', function () {
-    return view('techs');
+Route::get('/administration', function () {
+    return view('administration');
 });
 Route::get('/publish', function () {
     return view('write');

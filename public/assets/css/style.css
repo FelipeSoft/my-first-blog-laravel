@@ -337,6 +337,7 @@ div.stay-informed p{
 }
 div.stay-informed button{
     margin-top: 26px;
+    background-color: #fff;
 }
 /* div.weather-info-area{
     width: 100%;
@@ -403,7 +404,11 @@ div.passwordConfirmErrorArea{
     text-align: right;
     margin-bottom: 5px;
 }
+/* management */
 
+section#management table{
+    width: 100%;
+}
 /* footer */
 footer{
     background-color: var(--black);
