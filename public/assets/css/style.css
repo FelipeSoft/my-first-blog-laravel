@@ -419,22 +419,6 @@ section#management table thead tr td{
     padding: 10px;
     border: 1px solid var(--shadow-color);
 }
-section#management table tbody tr td:nth-child(5) div{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 100%;
-}
-section#management table tbody tr td:nth-child(5) div a{
-    font-size: 1.2em;
-}
-section#management table tbody tr td:nth-child(5) div a:nth-child(1){
-    color: var(--black);
-}
-section#management table tbody tr td:nth-child(5) div a:nth-child(2){
-    color: var(--red);
-}
 section#management table tbody tr td{
     width: max-content;
     background-color: #fff;

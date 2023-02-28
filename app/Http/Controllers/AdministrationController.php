@@ -21,27 +21,6 @@ class AdministrationController extends Controller
             $posts[] = $new_data;
         }
         
-        return view('management', ['posts' => array_reverse($posts)]);
-    }
-
-    public function delete(Request $r){
-        $post = Post::findOrFail($r->id);
-        $post->delete();
-        return redirect()->to(url()->previous());
-    }
-
-    public function edit(Request $r){
-        $post = Post::find($r->id);
-        return view('edit', ['post' => $post]);
-    }
-
-    public function edit_action(Request $r){
-        $post = Post::where('id', '=', $r->id)
-        ->update([
-            'title' => $r->title,
-            'subtitle' => $r->subtitle,
-            'body' => $r->body
-        ]);
-        return redirect()->to(url('http://localhost/blog-laravel/public/management'));
+        return view('management', ['posts' => $posts]);
     }
 }
