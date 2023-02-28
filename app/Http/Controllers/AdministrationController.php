@@ -21,6 +21,6 @@ class AdministrationController extends Controller
             $posts[] = $new_data;
         }
         
-        return view('management', ['posts' => $posts]);
+        return view('management', ['posts' => array_reverse($posts)]);
     }
 }
