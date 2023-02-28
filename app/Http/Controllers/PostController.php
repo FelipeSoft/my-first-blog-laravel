@@ -12,16 +12,19 @@ class PostController extends Controller
         $subtitle = $r->input('subtitle');
         $body = $r->input('body');
 
-        if($title !== ''
-            && $subtitle !== ''
-            && $body !== ''){
+        if($title !== '' && 
+           $subtitle !== '' && 
+           $body !== ''
+        ){
 
             $post = Post::create([
                 'title' => $title,
                 'subtitle' => $subtitle,
                 'body' => $body,
+                //lembrar de criar o usuário de ID 11
                 'user_id' => 11
             ])->save();
+
             return redirect('/');
         }
     }

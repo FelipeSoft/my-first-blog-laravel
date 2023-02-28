@@ -26,4 +26,7 @@ Route::post('/login', [AuthController::class, 'login_action']);
 Route::post('/register', [AuthController::class, 'register_action']);
 
 Route::get('/management', [AdministrationController::class, 'load']);
+Route::get('/management/delete/{id}', [AdministrationController::class, 'delete']);
 
+Route::get('/management/edit/{id}', [AdministrationController::class, 'edit']);
+Route::post("/management/edit", [AdministrationController::class, 'edit_action']);
