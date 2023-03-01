@@ -16,13 +16,15 @@ class PostController extends Controller
             && $subtitle !== ''
             && $body !== ''){
 
+            //autor desconhecido
+
             $post = Post::create([
                 'title' => $title,
                 'subtitle' => $subtitle,
                 'body' => $body,
-                'user_id' => 11
+                'user_id' => 1
             ])->save();
-            return redirect('/');
+            return redirect('http://localhost/blog-laravel/public/');
         }
     }
 

@@ -423,8 +423,22 @@ section#management table tbody tr td{
     width: max-content;
     background-color: #fff;
     border: 1px solid var(--shadow-color);
-    padding: 10px;
     height: 100%;
+    padding: 10px;
+}
+section#management table tbody tr td:nth-child(5) div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.2em;
+}
+section#management table tbody tr td:nth-child(5) div a:nth-child(1){
+    color: var(--black);
+}
+section#management table tbody tr td:nth-child(5) div a:nth-child(2){
+    color: var(--red);
 }
 /* footer */
 footer{

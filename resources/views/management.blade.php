@@ -27,8 +27,10 @@
                     <td>{{$p['subtitle']}}</td>
                     <td>{{$p['author']}}</td>
                     <td>
-                        <a href=""><i class="fa fa-pencil"></i></a>
-                        <a href=""><i class="fa fa-trash"></i></a>
+                        <div>
+                            <a href="http://localhost/blog-laravel/public/management/update/{{$p['id']}}"><i class="fa fa-pencil"></i></a>
+                            <a href="http://localhost/blog-laravel/public/management/delete/{{$p['id']}}" onclick="return confirm('Deseja realmente excluir essa publicação?')"><i class="fa fa-trash"></i></a>
+                        </div>
                     </td>
                 </tr>
             @endforeach

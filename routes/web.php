@@ -26,4 +26,11 @@ Route::post('/login', [AuthController::class, 'login_action']);
 Route::post('/register', [AuthController::class, 'register_action']);
 
 Route::get('/management', [AdministrationController::class, 'load']);
+Route::get('/management/delete/{id}', [AdministrationController::class, 'delete']);
+
+Route::get('/management/update/{id}', [AdministrationController::class, 'update']);
+Route::post('/management/update', [AdministrationController::class, 'update_action']);
+
+
+
 
