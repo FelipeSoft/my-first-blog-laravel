@@ -23,6 +23,7 @@ class AdministrationController extends Controller
         }
         
         return view('management', ['posts' => array_reverse($posts)]);
+<<<<<<< HEAD
     }
 
     public function update(Request $r){
@@ -40,5 +41,7 @@ class AdministrationController extends Controller
     public function delete(Request $r){
         $post = Post::destroy($r->id);
         return Redirect::to('http://localhost/blog-laravel/public/management');
+=======
+>>>>>>> ca44154da7fec7c11eaaa8e8652ddf4b0958c186
     }
 }
