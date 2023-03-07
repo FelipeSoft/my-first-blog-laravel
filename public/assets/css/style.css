@@ -430,7 +430,8 @@ section#management table tbody tr td{
     height: 100%;
     padding: 10px;
 }
-section#management table tbody tr td:nth-child(5) div{
+section#management table tbody tr td:nth-child(5) div,
+section#management table tbody tr td:nth-child(6) div{
     height: 100%;
     width: 100%;
     display: flex;
@@ -438,10 +439,12 @@ section#management table tbody tr td:nth-child(5) div{
     justify-content: space-evenly;
     font-size: 1.2em;
 }
-section#management table tbody tr td:nth-child(5) div a:nth-child(1){
+section#management table tbody tr td:nth-child(5) div a:nth-child(1),
+section#management table tbody tr td:nth-child(6) a:nth-child(1){
     color: var(--black);
 }
-section#management table tbody tr td:nth-child(5) div a:nth-child(2){
+section#management table tbody tr td:nth-child(5) div a:nth-child(2),
+section#management table tbody tr td:nth-child(6) a:nth-child(2){
     color: var(--red);
 }
 /* footer */
@@ -499,6 +502,17 @@ div.container-publish form textarea{
 div.container-publish form input:focus,
 div.container-publish form textarea:focus{
     border: 1px solid var(--red);
+}
+section#management nav{
+    padding-bottom: 18px;
+}
+section#management nav ul li{
+    display: inline-block;
+    padding-right: 20px;
+}
+
+section#management table{
+    margin-bottom: 36px;
 }
 
 /* responsiveness */

@@ -4,11 +4,17 @@
 
 <section id="management">
     <x-section-title>
-        <x-slot name="title">Publicações</x-slot>
+        <x-slot name="title">Manejamento</x-slot>
         <x-slot name="icon">
-            <i class="fa fa-file"></i>
+            <i class="fa fa-gears"></i>
         </x-slot>
     </x-section-title>
+    <nav>
+        <ul>
+            <li><a style="color: var(--red);" href="http://localhost/blog-laravel/public/management">Publicações</a></li>
+            <li><a style="color: var(--black);" href="http://localhost/blog-laravel/public/users">Usuários</a></li>
+        </ul>
+    </nav>
     <table>
         <thead>
             <tr>

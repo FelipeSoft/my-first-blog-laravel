@@ -17,16 +17,6 @@
         <nav>
             {{$search ?? null}}
         <ul>
-            {{-- <li>
-                <a href="http://localhost/blog-laravel/public/management">
-                    <x-button>
-                        <x-slot name="class">
-                            primary-button
-                        </x-slot>
-                        <x-slot name="title">Área do Administrador</x-slot>
-                    </x-button>
-                </a>
-            </li> --}}
             @if(Auth::user() !== null)
                 <li>
                     <p style="color:var(--white);">Olá, {{Auth::user()->name;}}!</p>
@@ -41,6 +31,18 @@
                         </x-button>
                     </a>
                 </li>
+                @if(Auth::user()->is_admin === 1)
+                        <li>
+                            <a href="http://localhost/blog-laravel/public/management">
+                                <x-button>
+                                    <x-slot name="class">
+                                        primary-button
+                                    </x-slot>
+                                    <x-slot name="title">Área do Administrador</x-slot>
+                                </x-button>
+                            </a>
+                        </li>
+                    @endif
                 <li>
                     <a href="http://localhost/blog-laravel/public/logout">
                         <x-button>
@@ -51,7 +53,6 @@
                         </x-button>
                     </a>
                 </li>
-                
                 @else
                 <li>
                     <a href="http://localhost/blog-laravel/public/register">

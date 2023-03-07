@@ -10,9 +10,6 @@ Route::get('/', [AuthController::class, 'index']);
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
-Route::get('/administration', function () {
-    return view('administration');
-});
 Route::get('/publish', function () {
     return view('write');
 });
@@ -29,11 +26,18 @@ Route::get('/register', fn() => view('register'));
 Route::post('/login', [AuthController::class, 'login_action']);
 Route::post('/register', [AuthController::class, 'register_action']);
 
+Route::get('users', [AdministrationController::class, 'users']);
+
 Route::get('/management', [AdministrationController::class, 'load']);
 Route::get('/management/delete/{id}', [AdministrationController::class, 'delete']);
 
 Route::get('/management/update/{id}', [AdministrationController::class, 'update']);
 Route::post('/management/update', [AdministrationController::class, 'update_action']);
+
+Route::get('/users/delete/{id}', [AdministrationController::class, 'delete_user']);
+
+Route::get('/users/update/{id}', [AdministrationController::class, 'update_user']);
+Route::post('/users/update', [AdministrationController::class, 'update_user_action']);
 
 
 
