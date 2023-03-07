@@ -6,6 +6,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdministrationController;
 
+Route::get('/', [AuthController::class, 'index']);
+Route::get('/login', [AuthController::class, 'login']);
+Route::get('/logout', [AuthController::class, 'logout']);
+
 Route::get('/administration', function () {
     return view('administration');
 });

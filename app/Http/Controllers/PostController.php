@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -16,13 +17,11 @@ class PostController extends Controller
             && $subtitle !== ''
             && $body !== ''){
 
-            //autor desconhecido
-
             $post = Post::create([
                 'title' => $title,
                 'subtitle' => $subtitle,
                 'body' => $body,
-                'user_id' => 1
+                'user_id' => Auth::user()->id
             ])->save();
             return redirect('http://localhost/blog-laravel/public/');
         }

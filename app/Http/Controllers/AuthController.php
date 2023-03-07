@@ -9,6 +9,25 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+    public function index(Request $r){
+        if(Auth::check()){
+            return redirect('http://localhost/blog-laravel/public/');
+        }
+        return redirect('http://localhost/blog-laravel/public/login');
+    }
+
+    public function login(){
+        if(Auth::check()) {
+            return redirect('http://localhost/blog-laravel/public/');
+        }
+        return view('login');
+    }
+
+    public function logout(Request $r){
+        Auth::logout();
+        return redirect('http://localhost/blog-laravel/public/login');
+    }
+
     public function register_action(Request $r){
         $all = User::all()->where('email', '=', $r->email);
         if($all->count() !== 1){

@@ -21,6 +21,7 @@
 
             <button class="primary-button">ENTRAR</button>
         </form>
+        <p>Ainda não possui uma conta? <a href="http://localhost/blog-laravel/public/register"><span>Registre-se.</span></a></p>
     </div>
     <script src="http://localhost/blog-laravel/public/assets/js/loginFormValidation.js"></script>
 </body>

@@ -13,17 +13,11 @@
 <body>
 <header>
     <div class="container-nav">
-        <nav>
-            <ul>
-                <li><a href="http://localhost/blog-laravel/public/">Home</a></li>
-                <li><a href="http://localhost/blog-laravel/public/publish">Nova Publicação</a></li>
-            </ul>
-        </nav>
-        <h1>Blog<span>.io</span></h1>
+        <a href="http://localhost/blog-laravel/public/"><h1>Blog<span>.io</span></h1></a>
         <nav>
             {{$search ?? null}}
         <ul>
-            <li>
+            {{-- <li>
                 <a href="http://localhost/blog-laravel/public/management">
                     <x-button>
                         <x-slot name="class">
@@ -32,7 +26,54 @@
                         <x-slot name="title">Área do Administrador</x-slot>
                     </x-button>
                 </a>
-            </li>
+            </li> --}}
+            @if(Auth::user() !== null)
+                <li>
+                    <p style="color:var(--white);">Olá, {{Auth::user()->name;}}!</p>
+                </li>
+                <li>
+                    <a href="http://localhost/blog-laravel/public/publish">
+                        <x-button>
+                            <x-slot name="class">
+                                primary-button
+                            </x-slot>
+                            <x-slot name="title">Nova Publicação</x-slot>
+                        </x-button>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost/blog-laravel/public/logout">
+                        <x-button>
+                            <x-slot name="class">
+                                secondary-button
+                            </x-slot>
+                            <x-slot name="title">Sair</x-slot>
+                        </x-button>
+                    </a>
+                </li>
+                
+                @else
+                <li>
+                    <a href="http://localhost/blog-laravel/public/register">
+                        <x-button>
+                            <x-slot name="class">
+                                secondary-button
+                            </x-slot>
+                            <x-slot name="title">Registrar-se</x-slot>
+                        </x-button>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost/blog-laravel/public/login">
+                        <x-button>
+                            <x-slot name="class">
+                                primary-button
+                            </x-slot>
+                            <x-slot name="title">Entrar</x-slot>
+                        </x-button>
+                    </a>
+                </li>
+            @endif
         </ul>
             <i id="menu-mobile-icon" class="fa fa-bars"></i>
         </nav>

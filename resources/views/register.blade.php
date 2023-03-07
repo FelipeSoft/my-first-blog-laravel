@@ -25,6 +25,7 @@
 
             <button class="primary-button">REGISTRAR</button>
         </form>
+        <p>Já possui uma conta? <a href="http://localhost/blog-laravel/public/login"><span>Inicie uma sessão.</span></a></p> 
     </div>
     <script src="http://localhost/blog-laravel/public/assets/js/registerFormValidation.js"></script>
 </body>
