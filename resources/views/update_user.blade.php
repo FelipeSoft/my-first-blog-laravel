@@ -22,13 +22,16 @@
                 <label>Email<span> *</span></label>
                 <input type="text" name="email" required maxlength="255" value="{{$user['email']}}">
 
-                <label>Senha<span>*</span></label>
-                <input type="text" name="password" required maxlength="255" value="{{$user['password']}}">
-
                 <label>Permissão<span> *</span></label>
+                
                 <select name="is_admin">
-                    <option value="Comum">Comum</option>
-                    <option value="Administrador">Administrador</option>
+                    @if($user['is_admin'] === 1)
+                        <option value="Administrador">Administrador</option>
+                        <option value="Comum">Comum</option>
+                    @else
+                        <option value="Comum">Comum</option>
+                        <option value="Administrador">Administrador</option>
+                    @endif
                 </select>
             </div>
 

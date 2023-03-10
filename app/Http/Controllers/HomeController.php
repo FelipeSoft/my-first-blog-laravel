@@ -12,19 +12,18 @@ class HomeController extends Controller
         $posts = Post::all();
 
         for($i = 0; $i < 3; $i++){
-            $random = rand(1, $posts->count());
-            $info = $posts->find($random);
+            $info = Post::all()->random();
 
             if($info !== null){
                 $newInfo = [
-                    'id' => $info['id'],
-                    'title' => $info['title'],
-                    'subtitle' => $info['subtitle'],
-                    'body' => $info['body'],
-                    'updated_at' => $info['updated_at'],
-                    'user_name' => $info->user->name,
-                ];
-                $data[] = $newInfo;
+                'id' => $info['id'],
+                'title' => $info['title'],
+                'subtitle' => $info['subtitle'],
+                'body' => $info['body'],
+                'updated_at' => $info['updated_at'],
+                'user_name' => $info->user->name,
+            ];
+            $data[] = $newInfo;
             }
         }
         return view('home', ['data' => $data]);

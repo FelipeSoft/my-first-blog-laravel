@@ -37,7 +37,7 @@
                     <td>
                         <div>
                             <a href="http://localhost/blog-laravel/public/users/update/{{$u['id']}}"><i class="fa fa-pencil"></i></a>
-                            <a href="http://localhost/blog-laravel/public/users/delete/{{$u['id']}}" onclick="return confirm('Deseja realmente excluir essa publicação?')"><i class="fa fa-trash"></i></a>
+                            <a href="http://localhost/blog-laravel/public/users/delete/{{$u['id']}}" onclick="return confirm('Deseja realmente excluir esse usuário?')"><i class="fa fa-trash"></i></a>
                         </div>    
                     </td>
                 </tr>

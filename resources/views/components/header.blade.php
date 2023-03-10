@@ -19,7 +19,12 @@
         <ul>
             @if(Auth::user() !== null)
                 <li>
-                    <p style="color:var(--white);">Olá, {{Auth::user()->name;}}!</p>
+                    <p style="color:var(--white);">Olá, 
+                        @php
+                            $data = explode(' ', Auth::user()->name);
+                            echo $data[0];  
+                        @endphp!
+                    </p>
                 </li>
                 <li>
                     <a href="http://localhost/blog-laravel/public/publish">

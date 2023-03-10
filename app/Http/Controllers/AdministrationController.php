@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Crypt;
 
 class AdministrationController extends Controller
 {
@@ -67,10 +68,9 @@ class AdministrationController extends Controller
         return view('update_user', ['user' => $currentUser]);
     }
     public function update_user_action(Request $r){
-        $user = User::find($r->input('id'))->update([
+        $user = User::where('id', '=', $r->input('id'))->update([
             'name' => $r->input('name'),
             'email' => $r->input('email'),
-            'password' => Hash::make($r->input('password')),
             'is_admin' => $r->input('is_admin') === 'Administrador' ? 1 : 0,
         ]);
         return Redirect::to('http://localhost/blog-laravel/public/users');
